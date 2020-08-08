@@ -3,7 +3,8 @@ Using only one hand, how many unique chords can you play on a piano keyboard?
 
 ![piano](steinway.jpg)
 
-**Assumptions:**
+Assumptions
+===========
 
 1. Your hand has a span of one octave, from thumb to pinky. When your right thumb is on middle C, your right pinky can just reach high C.
 1. Within the span of your hand, your very dexterous fingers can hit any of the keys.
@@ -11,11 +12,15 @@ Using only one hand, how many unique chords can you play on a piano keyboard?
 1. A chord has at least three notes.
 1. A 'unique' chord means a unique set of keys on the piano keyboard. A low C major chord and high C major chord involve different keys and count as two unique chords. But alternate fingerings of the same piano keys are not unique chords.
 
-**Answer**
+Answer
+======
 
-You should know there are 88 keys on a standard piano, and 12 notes in an octave. From this information we can calculate there are 60863 unique chords that can be played with one hand. Don't believe me? If we number the piano keys from 1 to 88, we can make a list of all the unique chords. View the list here: [unique chords](chords2.md)
+There are 88 keys on a standard piano, and 12 notes in an octave. From this information we can calculate there are **60863** unique chords that can be played with one hand. Don't believe me? If we number the piano keys from 1 to 88, we can make a list of all the unique chords. View the full list here: [unique chords](chords2.md)
 
-**Solution 1**
+Solution 1
+==========
+
+![f1]
 
 We can organize all the unique chords into distinct groups according to the lowest note in the chord. The first group contains all the unique chords whose lowest note is key #1 on the piano, the lowest possible note it can play. Because the hand can span a full octave, there are 12 other notes above key #1 that could also be played in order to form a chord. To form a three-note chord, we need key #1 plus any two of those 12 other notes. We can use [Combinations](https://en.wikipedia.org/wiki/Combination) to calculate how many unique possibilities exist. It is C(12,2) which equals 66, so there are 66 possible three-note chords whose lowest note is key #1.
 
@@ -33,7 +38,10 @@ Add them all together, and you get 60863 unique chords.
 
 Here is a spreadsheet with the calculations: [chords spreadsheet](https://docs.google.com/spreadsheets/d/1tZorBLimERYje6AAHBux1wXnYMuHpflxjamQk8WGPJY/edit?usp=sharing)
 
-**Solution 2**
+Solution 2
+==========
+
+![python](python.jpg)
 
 We can write a program that enumerates every possible chord, writing it to a list, then count the number of items in the list. This also makes it possible to visually inspect the list of chords to check for any obvious errors, omissions, or duplications.
 
@@ -44,3 +52,5 @@ Inside the third nested loop, the program has identified a unique three-note cho
 Run the program, and it lists 60863 unique chords. 
 
 Here is an implementation of the program in Python: [piano-chords.py](piano-chords.py)
+
+[f1]: http://chart.apis.google.com/chart?cht=tx&chl=m=\frac{m_0}{\sqrt{1-{\frac{v^2}{c^2}}}}
