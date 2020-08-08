@@ -53,4 +53,4 @@ Run the program, and it lists 60863 unique chords.
 
 Here is an implementation of the program in Python: [piano-chords.py](piano-chords.py)
 
-[f1]: http://chart.apis.google.com/chart?cht=tx&chl=m=\frac{m_0}{\sqrt{1-{\frac{v^2}{c^2}}}}
+[f1]: http://chart.apis.google.com/chart?cht=tx&chl=76\displaystyle\sum_{i=2}^{4}{}_{12}C_{i}%2B\displaystyle\sum_{i=2}^{11}{}_{i}C_{2}%2B\displaystyle\sum_{i=3}^{11}{}_{i}C_{3}%2B\displaystyle\sum_{i=4}^{11}{}_{i}C_{4}
