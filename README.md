@@ -13,7 +13,7 @@ Using only one hand, how many unique chords can you play on a piano keyboard?
 
 **Answer**
 
-You should know there are 88 keys on a standard piano, and 12 notes in an octave. From this information we can calculate there are 60863 unique chords that can be played with one hand. Don't believe me? If we number the piano keys from 1 to 88, we can make a list of all the unique chords. View the list here: [unique chords](chords.md)
+You should know there are 88 keys on a standard piano, and 12 notes in an octave. From this information we can calculate there are 60863 unique chords that can be played with one hand. Don't believe me? If we number the piano keys from 1 to 88, we can make a list of all the unique chords. View the list here: [unique chords](chords2.md)
 
 **Solution 1**
 
