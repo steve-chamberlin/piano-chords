@@ -11,9 +11,11 @@ Using only one hand, how many unique chords can you play on a piano keyboard?
 1. A chord has at least three notes.
 1. A 'unique' chord means a unique set of keys on the piano keyboard. A low C major chord and high C major chord involve different keys and count as two unique chords. But alternate fingerings of the same piano keys are not unique chords.
 
+
 **Answer**
 
 You should know there are 88 keys on a standard piano, and 12 notes in an octave. From this information we can calculate there are 60863 unique chords that can be played with one hand. Don't believe me? If we number the piano keys from 1 to 88, we can make a list of all the unique chords. View the list here: [unique chords](chords2.md)
+
 
 **Solution 1**
 
@@ -32,3 +34,14 @@ We can use the same method to calculate the number of unique four-note chords, e
 Add them all together, and you get 60863.
 
 Here is a spreadsheet with the calculations: [chords spreadsheet](https://docs.google.com/spreadsheets/d/1tZorBLimERYje6AAHBux1wXnYMuHpflxjamQk8WGPJY/edit?usp=sharing)
+
+
+**Solution 2**
+
+We can write a program that enumerates every possible chord, writing it to a list, then count the number of items in the list. This also makes it possible to visually inspect the list of chords to check for any obvious errors, omissions, or duplications.
+
+The program consists of five nested loops, one for each possible note in the chord. The first (outermost) loop enumerates all the possibilities for the lowest note in the chord. It ranges over keys 1 to 88, since the the lowest note could theoretically be anywhere on the piano. The second loop enumerates all the notes that are higher than the first note, but still within a hand span of the first note (and still within the 88 key range of the piano). The third loop enumerates all the notes that are higher than the second note, but still within a hand span of the first note.
+
+Inside the third nested loop, the program has identified a unique three-note chord, so it increments a counter for the total number of 3-note chords. But it doesn't stop there: it continues in the same pattern with a fourth nested loop, and a fifth, to enumerate all the unique 4-note and 5-note chords. 
+
+Here is an implementation of the program in Python: [piano-chords.py](piano-chords.py)
